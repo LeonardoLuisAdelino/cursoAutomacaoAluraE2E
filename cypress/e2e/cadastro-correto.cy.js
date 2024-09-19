@@ -1,6 +1,7 @@
 describe('página de cadastro', () => {
   beforeEach(()=>{
     cy.visit('https://adopet-frontend-cypress.vercel.app/');
+    cy.get('.initial > img').should('be.visible')
     cy.get('[data-test="register-button"]').click();
 })
   it('DEve preencher os campos do formulario corretamente para cadastrar um novo usuário', () => {
