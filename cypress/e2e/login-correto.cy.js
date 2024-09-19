@@ -3,6 +3,8 @@ describe('página de login', ()=>{
     beforeEach(()=>{
         cy.visit('https://adopet-frontend-cypress.vercel.app/');
         cy.get('.initial > img').should('be.visible')
+        cy.get('.button').should('be.visible')
+        cy.get('.initial > p').should('be.visible')
         cy.get('[data-test="login-button"]').click();
     })
 
