@@ -1,13 +1,14 @@
 describe('página de cadastro', () => {
-  it('DEve preencher os campos do formulario corretamente para cadastrar um novo usuário', () => {
+  beforeEach(()=>{
     cy.visit('https://adopet-frontend-cypress.vercel.app/');
     cy.get('[data-test="register-button"]').click();
+})
+  it('DEve preencher os campos do formulario corretamente para cadastrar um novo usuário', () => {
     cy.get('[data-test="input-name').type('Ana de Jesus');
     cy.get('[data-test="input-email"]').type('ana@email.com');
     cy.get('[for="pass-create"]').type('Senha123');
     cy.get('[for="pass-confirm"]').type('Senha123');
-    cy.get('[data-test="submit-button"]').click();
-    
+    cy.get('[data-test="submit-button"]').click();   
   })
   /*
   it('deve carregar a página corretamente e clicar no botão ‘Ver pets disponíveis para adoção”', () => {
